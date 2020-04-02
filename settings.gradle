@@ -1,0 +1,3 @@
+include ':app', ':umeng_wrapper'
+rootProject.name = 'LoginDemo'
+include ':third_generation'
