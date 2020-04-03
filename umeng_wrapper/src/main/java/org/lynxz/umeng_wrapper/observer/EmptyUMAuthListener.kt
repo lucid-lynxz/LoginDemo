@@ -1,4 +1,4 @@
-package org.lynxz.umeng_lib.observer
+package org.lynxz.umeng_wrapper.observer
 
 import com.umeng.socialize.UMAuthListener
 import com.umeng.socialize.bean.SHARE_MEDIA

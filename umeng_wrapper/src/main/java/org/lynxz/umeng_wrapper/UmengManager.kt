@@ -1,4 +1,4 @@
-package org.lynxz.umeng_lib
+package org.lynxz.umeng_wrapper
 
 import android.app.Activity
 import android.app.Application
@@ -6,7 +6,7 @@ import com.umeng.commonsdk.UMConfigure
 import com.umeng.socialize.PlatformConfig
 import com.umeng.socialize.UMShareAPI
 import com.umeng.socialize.bean.SHARE_MEDIA
-import org.lynxz.umeng_lib.observer.EmptyUMAuthListener
+import org.lynxz.umeng_wrapper.observer.EmptyUMAuthListener
 
 /**
  * 文档: https://developer.umeng.com/docs/66632/detail/66639

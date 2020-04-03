@@ -2,13 +2,14 @@ package org.lynxz.login
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import com.umeng.socialize.weixin.view.WXCallbackActivity
 import org.lynxz.third_generation.annotation.ThirdActivityAutoGenerator
 
 @ThirdActivityAutoGenerator(
     getApplicationId = BuildConfig.APPLICATION_ID,
     getSubPackageName = "wxapi",
     getTargetActivityName = "WXEntryActivity",
-    getSupperClass = AppCompatActivity::class
+    getSupperClass = WXCallbackActivity::class
 )
 class MainActivity : AppCompatActivity() {
 

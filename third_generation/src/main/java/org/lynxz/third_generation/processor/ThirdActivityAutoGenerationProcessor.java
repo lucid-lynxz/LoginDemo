@@ -75,16 +75,12 @@ public class ThirdActivityAutoGenerationProcessor extends AbstractProcessor {
 
     @Override
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
-        messager.printMessage(Diagnostic.Kind.WARNING, "=====process======");
         Set<? extends Element> elements = roundEnv.getElementsAnnotatedWith(ThirdActivityAutoGenerator.class);
         for (Element element : elements) { // class 类型
             ThirdActivityAutoGenerator annotation = element.getAnnotation(ThirdActivityAutoGenerator.class);
             String applicationId = annotation.getApplicationId(); // app引用包名
             String subPackageName = annotation.getSubPackageName(); // 要创建的类所在子包名,可空, 如: wxapi
             String targetActivityName = annotation.getTargetActivityName(); // 类名, 如: WXEntryActivity
-
-//            messager.printMessage(Diagnostic.Kind.ERROR, "=====process====== applicationId:" + applicationId);
-            messager.printMessage(Diagnostic.Kind.NOTE, "applicationId:" + applicationId + ",subPackageName=" + subPackageName + ",targetActivityName:" + targetActivityName);
 
             // 获取父类信息
             Class<?> supperClass = null;
