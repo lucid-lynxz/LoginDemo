@@ -5,7 +5,6 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply from: "../config/sign.gradle"
 
-//android.defaultConfig.javaCompileOptions.annotationProcessorOptions.includeCompileClasspath = true
 android {
     compileSdkVersion androidCompileSdkVersion
     buildToolsVersion androidBuildToolsVersion
@@ -49,10 +48,19 @@ dependencies {
     implementation(libs.supportV4)
     implementation(libs.constraintLayout)
 
-    implementation project(path: ':umeng_wrapper')
+    if (useMavenVersion) {
+        // 导入友盟微信登录分享相关依赖库
+        implementation 'org.lynxz.umeng_wrapper:umeng_wrapper:1.0.1'
 
-    implementation project(path: ':third_generation')
-    kapt project(path: ':third_generation')
+        // 导入自动生成指定空类注解
+        implementation 'org.lynxz.third_generation:third_generation:1.0.0'
+        kapt 'org.lynxz.third_generation:third_generation:1.0.0'
+    } else {
+        implementation project(path: ':umeng_wrapper')
+
+        implementation project(path: ':third_generation')
+        kapt project(path: ':third_generation')
+    }
 }
 
 

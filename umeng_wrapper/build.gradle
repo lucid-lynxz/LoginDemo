@@ -62,7 +62,7 @@ publish {
     groupId = 'org.lynxz.umeng_wrapper' // 填包名就好
     artifactId = 'umeng_wrapper'  // bintray中对应的packagename,大小写敏感
     uploadName = 'umeng_wrapper' // rbintray中对应的maven product名称,默认为artifactId, 大小写敏感
-    publishVersion = '1.0.0' // 发布版本号
-    desc = '微信xml自动注册'
+    publishVersion = '1.0.1' // 发布版本号
+    desc = '微信xml自动注册,增加微信回调activity模板类:WXTemplateActivity'
     website = 'https://github.com/lucid-lynxz/LoginDemo.git'
 }

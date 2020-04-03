@@ -19,22 +19,22 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.SOURCE) //声明注解的有效期为源码期
 public @interface ThirdActivityAutoGenerator {
     /**
-     * app包名
+     * @return app包名
      */
     String getApplicationId();
 
     /**
-     * 子包名, 位于 applicationId 包的下一级
+     * @return 子包名, 位于 applicationId 包的下一级
      */
     String getSubPackageName();
 
     /**
-     * 要生成的activity名称
+     * @return 要生成的activity名称
      */
     String getTargetActivityName();
 
     /**
-     * 生成类的父类
+     * @return 生成类的父类
      */
     Class<?> getSupperClass() default Object.class;
 }
