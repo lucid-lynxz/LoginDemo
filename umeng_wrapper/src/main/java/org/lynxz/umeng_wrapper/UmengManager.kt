@@ -53,8 +53,8 @@ object UmengManager {
         UMConfigure.setLogEnabled(true);
     }
 
-    fun setWeixinConfig(key: String, secret: String) {
-        PlatformConfig.setWeixin(key, secret);
+    fun setWeixinConfig(wxAppId: String, wxAppSecret: String) {
+        PlatformConfig.setWeixin(wxAppId, wxAppSecret);
     }
 
     fun setAlipayConfig(key: String) {
@@ -81,11 +81,27 @@ object UmengManager {
 //    }
 
     /**
-     * [登录并获取用户资料](https://developer.umeng.com/docs/66632/detail/66639#h3-u83B7u53D6u7528u6237u8D44u6599)
+     * [通过微信登录并获取用户资料](https://developer.umeng.com/docs/66632/detail/66639#h3-u83B7u53D6u7528u6237u8D44u6599)
      * @param listener 登录回调
      * */
-    fun getPlatformInfo(act: Activity, listener: EmptyUMAuthListener = EmptyUMAuthListener()) {
-        shareApi.getPlatformInfo(act, SHARE_MEDIA.WEIXIN, listener)
+    fun getWeixinPlatformInfo(
+        act: Activity,
+        listener: EmptyUMAuthListener = EmptyUMAuthListener()
+    ) {
+        getPlatformInfo(act, SHARE_MEDIA.WEIXIN, listener)
+    }
+
+    /**
+     * [登录并获取用户资料](https://developer.umeng.com/docs/66632/detail/66639#h3-u83B7u53D6u7528u6237u8D44u6599)
+     * @param listener 登录回调
+     * @param platform 平台
+     * */
+    fun getPlatformInfo(
+        act: Activity,
+        platform: SHARE_MEDIA,
+        listener: EmptyUMAuthListener = EmptyUMAuthListener()
+    ) {
+        shareApi.getPlatformInfo(act, platform, listener)
     }
 
 }

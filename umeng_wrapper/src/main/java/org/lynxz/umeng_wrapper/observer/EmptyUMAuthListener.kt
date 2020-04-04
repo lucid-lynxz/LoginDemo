@@ -5,8 +5,9 @@ import com.umeng.socialize.bean.SHARE_MEDIA
 
 /**
  * 文档: https://developer.umeng.com/docs/66632/detail/66639#h3-u83B7u53D6u7528u6237u8D44u6599
+ * 友盟登录回调
  * */
-class EmptyUMAuthListener : UMAuthListener {
+open class EmptyUMAuthListener : UMAuthListener {
     /**
      * @desc 授权成功的回调
      * @param platform 平台名称

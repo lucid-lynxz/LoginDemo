@@ -39,7 +39,7 @@ android {
 
 dependencies {
     // 导入友盟微信登录分享相关依赖库
-    implementation 'org.lynxz.umeng_wrapper:umeng_wrapper:1.0.1'
+    implementation 'org.lynxz.umeng_wrapper:umeng_wrapper:1.0.2'
 
     // 导入自动生成指定空类注解
     implementation 'org.lynxz.third_generation:third_generation:1.0.0'
@@ -87,13 +87,29 @@ class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         with(UmengManager) {
-            init(this@MyApplication)
+            init(this@MyApplication,"youmeng_app_key")
 
-            // 设置各平台的key和secretKey, 以下参数为示例,按实际修改
+            // 设置各平台的appId和secret, 以下参数为示例,按实际修改
             setWeixinConfig("wxdc1e388c3822c80b", "3baf1193c85774b3fd9d18447d76cab0");
             setAlipayConfig("2015111700822536");
         }
     }
+}
+```
+
+### 微信登录
+
+```kotlin
+fun loginByWechat() {
+    UmengManager.getWeixinPlatformInfo(activity, object : EmptyUMAuthListener() {
+        override fun onComplete(
+            platform: SHARE_MEDIA?,
+            action: Int,
+            data: MutableMap<String, String>?
+        ) {
+            super.onComplete(platform, action, data)
+        }
+    })
 }
 ```
 

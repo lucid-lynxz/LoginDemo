@@ -50,7 +50,7 @@ dependencies {
 
     if (useMavenVersion) {
         // 导入友盟微信登录分享相关依赖库
-        implementation 'org.lynxz.umeng_wrapper:umeng_wrapper:1.0.1'
+        implementation 'org.lynxz.umeng_wrapper:umeng_wrapper:1.0.2'
 
         // 导入自动生成指定空类注解
         implementation 'org.lynxz.third_generation:third_generation:1.0.0'
